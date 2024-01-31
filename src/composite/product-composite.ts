@@ -1,7 +1,9 @@
+import { ProductProtocol } from "../decorator/product/product-protocol";
+
 // Component
 export abstract class ProductComponent {
   abstract getpreco(): number;
-
+  abstract getNome(): string;
   add(product: ProductComponent): void {}
   remove(product: ProductComponent): void {}
 }
@@ -16,11 +18,16 @@ export class ProductLeaf extends ProductComponent {
   getpreco(): number {
     return this.preco;
   }
+
+  getNome(): string {
+    return this.nome;
+  }
 }
 
 // Composite
 //aqui vai somar o preço de todos os seus filhos
-export class ProductComposite extends ProductComponent {
+export class ProductComposite extends ProductComponent implements ProductProtocol {
+  
   private children: ProductComponent[] = [];
 
   add(...products: ProductComponent[]): void {
@@ -35,5 +42,10 @@ export class ProductComposite extends ProductComponent {
   getpreco(): number {
     return this.children.reduce((sum, child) => sum + child.getpreco(), 0);
   }
+
+  getNome(): string {
+    return this.children.map((child) => child.getNome()).join(', ');
+  }
+
 }
 

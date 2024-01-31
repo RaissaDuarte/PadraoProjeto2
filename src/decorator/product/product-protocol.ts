@@ -1,4 +1,4 @@
 export interface ProductProtocol {
-  getPrice(): number;
-  getName(): string;
+  getpreco(): number;
+  getNome(): string;
 }

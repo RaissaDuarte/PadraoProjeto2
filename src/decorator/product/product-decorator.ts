@@ -2,12 +2,12 @@ import { ProductProtocol } from './product-protocol';
 
 export class ProductDecorator implements ProductProtocol {
   constructor(protected product: ProductProtocol) {}
-
-  getName(): string {
-    return this.product.getName();
+  
+  getNome(): string {
+    return this.product.getNome();
   }
 
-  getPrice(): number {
-    return this.product.getPrice();
+  getpreco(): number {
+    return this.product.getpreco();
   }
 }

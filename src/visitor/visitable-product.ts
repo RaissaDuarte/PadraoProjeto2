@@ -1,15 +1,15 @@
 import { TaxVisitorProtocol } from './tax-visitor-protocol';
 
 export abstract class VisitableProduct {
-  constructor(protected name: string, protected price: number) {}
+  constructor(protected nome: string, protected preco: number) {}
 
-  getName(): string {
-    return this.name;
+  getNome(): string {
+    return this.nome;
   }
 
-  getPrice(): number {
-    return this.price;
+  getPreco(): number {
+    return this.preco;
   }
 
-  abstract getPriceWithTaxes(visitor: TaxVisitorProtocol): number;
+  abstract getPrecoComTaxa(visitor: TaxVisitorProtocol): number;
 }

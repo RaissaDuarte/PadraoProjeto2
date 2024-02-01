@@ -1,9 +1,9 @@
-import { Food } from './food';
-import { Cigarette } from './cigarette';
-import { AlcoholicDrink } from './alcoholic-drink';
+import { Roupa } from './roupa';
+import { Eletronico } from './eletronico';
+import { Remedio } from './remedio';
 
 export interface TaxVisitorProtocol {
-  calculateTaxesForFood(food: Food): number;
-  calculateTaxesForCigarette(cigarette: Cigarette): number;
-  calculateTaxesForAlcoholicDrink(alcoholicDrink: AlcoholicDrink): number;
+  calculaTaxaRoupa(roupa: Roupa): number;
+  calculaTaxaEletronico(eletronico: Eletronico): number;
+  calculaTaxaRemedio(remedio: Remedio): number;
 }
